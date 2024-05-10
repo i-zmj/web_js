@@ -1,34 +1,32 @@
 // ==UserScript==
 // @name         	Jenkins编译参数筛选
-// @version      	2.2
+// @version      	2.3
 // @namespace		https://izmj.net
-// @license		MIT
+// @license		    MIT
 // @description  	进行编译的时候，提供额外的筛选按钮。如果功能不好使，请查看match路径是否正确
-// @require		https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js
-// @require		https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js
+// @require		    https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js
+// @require		    https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js
 // @resource		select2css https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css
-// @grant		GM_addStyle
-// @grant		GM_getResourceText
-// @match		*://*/*job/*/build*
+// @grant		    GM_addStyle
+// @grant		    GM_getResourceText
+// @match		    *://*/*job/*/build*
 // @run-at       	document_end
-// @icon64      https://img.qovv.cn/2024/05/09/663c80c3b8adf.png
-// @downloadURL https://update.greasyfork.org/scripts/494230/Jenkins%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0%E7%AD%9B%E9%80%89.user.js
-// @updateURL https://update.greasyfork.org/scripts/494230/Jenkins%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0%E7%AD%9B%E9%80%89.meta.js
+// @icon64          https://img.qovv.cn/2024/05/09/663c80c3b8adf.png
 // ==/UserScript==
 
-var select2css = GM_getResourceText ("select2css");
-GM_addStyle (select2css);
+var select2css = GM_getResourceText("select2css");
+GM_addStyle(select2css);
 
 $("select").select2({
     dropdownAutoWidth: true,
     width: 'style',
-    maximumSelectionLength: 0, // 允许无限选择
+    maximumSelectionLength: 0,
 });
 
 $(document).ready(function () {
     $("select").select2({
         dropdownAutoWidth: true,
         width: 'style',
-        maximumSelectionLength: 0, // 允许无限选择
+        maximumSelectionLength: 0,
     });
 });
