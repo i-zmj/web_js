@@ -2,7 +2,7 @@
 
 本库是油猴脚本的开源项目。
 
-![izmj logo](./img/izmj180.png)  
+![izmj logo](./img/zmj.png)  
 
 ## Jenkins参数筛选工具
 
