@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name            Jira快速备注模板工具
 // @namespace       https://izmj.net/
-// @version         0.8
+// @version         0.8.1
 // @description     在JIRA页面，搜索comment-wiki-edit元素，在该元素下添加一个select控件。可以快速添加所需的模板。
 // @author          GiraKoo
 // @license         MIT
 // @match           *://*/browse/*
 // @run-at          document-end
-// @icon64          https://img.qovv.cn/2024/05/09/663c80c3b8adf.png
+// @icon64          https://gitee.com/izmj/web_js/raw/main/img/zmj.png
 // ==/UserScript==
 
 // 找到一个id为comment-wiki-edit的div

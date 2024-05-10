@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         	Jenkins编译参数筛选
-// @version      	2.3
+// @version      	2.3.1
 // @namespace		https://izmj.net
 // @license		    MIT
 // @description  	进行编译的时候，提供额外的筛选按钮。如果功能不好使，请查看match路径是否正确
@@ -11,7 +11,7 @@
 // @grant		    GM_getResourceText
 // @match		    *://*/*job/*/build*
 // @run-at       	document_end
-// @icon64          https://img.qovv.cn/2024/05/09/663c80c3b8adf.png
+// @icon64          https://gitee.com/izmj/web_js/raw/main/img/zmj.png
 // ==/UserScript==
 
 var select2css = GM_getResourceText("select2css");
