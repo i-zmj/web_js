@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Jira快速备注模板工具
 // @namespace       https://izmj.net/
-// @version         0.8.1
+// @version         0.9
 // @description     在JIRA页面，搜索comment-wiki-edit元素，在该元素下添加一个select控件。可以快速添加所需的模板。
 // @author          GiraKoo
 // @license         MIT
@@ -10,11 +10,29 @@
 // @icon64          https://gitee.com/izmj/web_js/raw/main/img/zmj.png
 // ==/UserScript==
 
+// 创建一个CSS样式规则来隐藏下拉箭头，定制id为jira_quick_comment_select的元素
+var style = document.createElement('style');
+style.type = 'text/css';
+style.innerHTML = `
+    #jira_quick_comment_select::-ms-expand {
+        display: none;
+    }
+    #jira_quick_comment_select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+`;
+
+// 将样式添加到页面中
+document.head.appendChild(style);
+
 // 找到一个id为comment-wiki-edit的div
 var commentWikiEditDiv = document.getElementById('comment-wiki-edit');
 if (commentWikiEditDiv) {
     // 添加一个下拉列表，列表中直接“原因分析”，“解决方案”等常用文本
     var select = document.createElement('select');
+    select.id = "jira_quick_comment_select"
     select.innerHTML = `
         <option value="">选择快速模板</option>
         <option value="黄色区块">黄色区块</option>
