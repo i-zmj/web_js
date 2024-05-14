@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Jira快速备注模板工具
 // @namespace       https://izmj.net/
-// @version         0.9
+// @version         0.9.1
 // @description     在JIRA页面，搜索comment-wiki-edit元素，在该元素下添加一个select控件。可以快速添加所需的模板。
 // @author          GiraKoo
 // @license         MIT
@@ -10,7 +10,7 @@
 // @icon64          https://gitee.com/izmj/web_js/raw/main/img/zmj.png
 // ==/UserScript==
 
-// 创建一个CSS样式规则来隐藏下拉箭头，定制id为jira_quick_comment_select的元素
+// 创建一个CSS样式规则来隐藏下拉箭头
 var style = document.createElement('style');
 style.type = 'text/css';
 style.innerHTML = `
@@ -18,9 +18,13 @@ style.innerHTML = `
         display: none;
     }
     #jira_quick_comment_select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
+        -moz-appearance: none; /* Firefox */
+        -webkit-appearance: none; /* Chrome, Safari, Opera */
         appearance: none;
+        background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23344563' d='M6.744 8.744a1.053 1.053 0 0 0 0 1.49l4.547 4.557a1 1 0 0 0 1.416 0l4.55-4.558a1.051 1.051 0 1 0-1.488-1.488l-3.77 3.776-3.768-3.776a1.051 1.051 0 0 0-1.487 0z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+        background-size: 16px 16px;
     }
 `;
 
