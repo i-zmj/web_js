@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Jira标题拷贝按钮
 // @namespace       https://izmj.net/
-// @version         0.6
+// @version         0.7
 // @description     在JIRA页面，快速拷贝ID,标题,链接
 // @author          GiraKoo
 // @license         MIT
@@ -32,26 +32,26 @@ jira_copy_link_div.className = 'aui-buttons pluggable-ops';
 // 如果transitions_div下面有ul元素
 if (transitions_div) {
     if (transitions_div.querySelector('ul')) {
-        var jira_copy_title_element = document.createElement('ul');
-        jira_copy_title_element.className = 'toolbar-group pluggable-ops';
-        jira_copy_title_element.id = 'jira_copy_title_element';
+        var jira_copy_link_ul = document.createElement('ul');
+        jira_copy_link_ul.className = 'toolbar-group pluggable-ops';
+        jira_copy_link_ul.id = 'jira_copy_link_ul';
 
         var li_copy_id = document.createElement('li');
         li_copy_id.className = 'toolbar-item';
-        li_copy_id.innerHTML = '<a class="aui-button toolbar-trigger" href="#" id="jira_copy_title">ID</a>';
-        jira_copy_title_element.appendChild(li_copy_id);
+        li_copy_id.innerHTML = '<a class="aui-button toolbar-trigger" href="#" id="jira_copy_id">ID</a>';
+        jira_copy_link_ul.appendChild(li_copy_id);
 
         var li_copy_title = document.createElement('li');
         li_copy_title.className = 'toolbar-item';
         li_copy_title.innerHTML = '<a class="aui-button toolbar-trigger" href="#" id="jira_copy_title">标题</a>';
-        jira_copy_title_element.appendChild(li_copy_title);
+        jira_copy_link_ul.appendChild(li_copy_title);
 
         var li_copy_link = document.createElement('li');
         li_copy_link.className = 'toolbar-item';
         li_copy_link.innerHTML = '<a class="aui-button toolbar-trigger" href="#" id="jira_copy_link">链接</a>';
-        jira_copy_title_element.appendChild(li_copy_link);
+        jira_copy_link_ul.appendChild(li_copy_link);
 
-        jira_copy_link_div.appendChild(jira_copy_title_element);
+        jira_copy_link_div.appendChild(jira_copy_link_ul);
     }
     else {
         // 如果transitions_div下面没有ul元素，则直接使用a元素
